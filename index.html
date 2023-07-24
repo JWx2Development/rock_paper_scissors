@@ -3,27 +3,74 @@
 
 <head>
     <title>Rock Paper Scissors</title>
-    <!-- Include Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
 
-    <head>
-        <title>Rock Paper Scissors</title>
-        <!-- Include Tailwind CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
-    </head>
+    <style>
+        /* Add custom animation for scaling */
+        @keyframes scaleUp {
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(1.5);
+            }
+        }
+
+        /* Add custom animation for showing the computer's choice */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Add custom transition for smooth scaling */
+        img {
+            transition: transform 0.5s ease-in-out;
+        }
+    </style>
+</head>
 
 <body class="bg-gray-100">
+    <!-- Display Scores at the Top -->
+    <div class="container mx-auto mt-10">
+        <h2 class="text-xl font-bold mb-2 text-center">Player Score: <span id="player-score">0</span> - Computer Score:
+            <span id="computer-score">0</span>
+        </h2>
+    </div>
+
     <div class="container mx-auto mt-10">
         <h1 class="text-4xl font-bold mb-4 text-center">Rock, Paper, Scissors</h1>
         <div class="grid grid-cols-3 gap-4">
-            <img src="/images/rock.png" alt="Rock" class="cursor-pointer w-32 mx-auto" onclick="makeChoice('rock')">
-            <img src="/images/paper.png" alt="Paper" class="cursor-pointer w-32 mx-auto" onclick="makeChoice('paper')">
-            <img src="/images/scissors.png" alt="Scissors" class="cursor-pointer w-32 mx-auto"
-                onclick="makeChoice('scissors')">
+            <img src="images/rock.png" alt="Rock" class="cursor-pointer w-32 mx-auto"
+                onclick="makeChoice('rock', this)">
+            <img src="images/paper.png" alt="Paper" class="cursor-pointer w-32 mx-auto"
+                onclick="makeChoice('paper', this)">
+            <img src="images/scissors.png" alt="Scissors" class="cursor-pointer w-32 mx-auto"
+                onclick="makeChoice('scissors', this)">
         </div>
+
+        <!-- Placeholder for computer's choice -->
+        <div id="computer-choice" class="mt-4 text-center hidden">
+            <h3 class="text-xl font-bold">Computer's Choice:</h3>
+            <img id="computer-choice-img" class="w-32 mx-auto opacity-0">
+        </div>
+
         <div class="mt-4 text-center">
             <h3 class="text-xl font-bold">Result:</h3>
             <p id="result-text" class="mt-2 text-lg"></p>
+            <p id="play-again-text" class="mt-2 text-lg"></p>
+            <button id="play-again-button"
+                class="hidden bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                onclick="playAgain()">Play Again</button>
+            <button id="new-game-button"
+                class="hidden bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                onclick="newGame()">New Game</button>
         </div>
     </div>
 
