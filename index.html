@@ -3,12 +3,12 @@
 
 <head>
     <title>Rock Paper Scissors - Home</title>
-    <!-- Include Tailwind CSS -->
+    <!-- Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
 
     <style>
-        /* Add custom font family */
+        /* custom font family */
         body {
             font-family: 'PT Sans', sans-serif;
             background-color: #72BFDD;
@@ -20,25 +20,26 @@
 <body>
     <div class="container mx-auto mt-10">
         <!-- Game Title and Logo -->
-        <h1 class="text-7xl font-bold mt-16 mb-16 text-center">Rock Paper Scissors</h1>
-        <img src="images/logo.png" alt="Logo" class="w-32 mx-auto mt-16 mb-16">
+        <h1 class="text-7xl md:text-8xl font-bold mt-16 mb-16 text-center">Rock Paper Scissors</h1>
+        <img src="/images/logo.png" alt="Logo" class="w-32 mx-auto mt-16 mb-16">
 
         <!-- Game Description -->
         <div class="text-center mb-16">
-            <p class="text-4xl p-16 font-bold">Welcome to the Rock Paper Scissors game!</p>
-            <p class="text-lg">Play against the computer and try to reach 5 points first to win.</p>
+            <p class="text-4xl md:text-6xl p-16 font-bold">Welcome to the Rock Paper Scissors game!</p>
+            <p class="text-lg md:text-6xl">Play against the computer and try to reach 5 points first to win.</p>
         </div>
 
         <!-- Name Input Field -->
         <div class="mt-4 text-center">
-            <label for="playerName" class="text-lg px-8">Enter your name:</label>
-            <input type="text" id="playerName" class="border border-gray-400 px-4 py-2 m-14 rounded">
+            <label for="playerName" class="text-lg px-8 md:text-6xl">Enter your name:</label>
+            <input type="text" id="playerName" class="border border-gray-400 px-4 py-2 m-14 rounded"
+                style="width: 50%;">
         </div>
 
         <!-- Start Button -->
         <div class="mt-4 text-center">
             <button id="startButton" class="font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                style="background-color: #82FF9E; color: black;" onclick="startGame()">Start</button>
+                style="background-color: #82FF9E; color: black; width:50% ;" onclick="startGame()">Start</button>
         </div>
     </div>
 

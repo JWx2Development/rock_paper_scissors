@@ -1,4 +1,4 @@
-// Move the toggleGridClass and removeGridClass functions outside of the makeChoice function
+// toggleGridClass and removeGridClass functions 
 function toggleGridClass() {
     const choicesContainer = document.getElementById("choices-container");
     choicesContainer.classList.toggle("grid-cols-3");
